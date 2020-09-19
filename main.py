@@ -14,6 +14,8 @@ while True:
     #setup
     data = ser.readline()[:-2]  # the last bit gets rid of the new-line chars
     params = data.split()
+    if (len(params) == 0):
+        break
     #parses string from into words, stores them in their respective variables
     #String format: mouseX, mouseY, mouse1_clicked, mouse2_clicked
     mouseX = (int(params[0].decode('utf-8'))-516) / sensitivity
@@ -26,3 +28,5 @@ while True:
     if (mouse2_clicked == "M2_PRESSED"):
         mouse.click('right')
     mouse.move(mouseX, mouseY, absolute=False, duration=duration)
+
+print("Device disconnected ")
