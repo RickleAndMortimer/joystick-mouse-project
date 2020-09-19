@@ -28,5 +28,3 @@ while True:
         if (mouse2_clicked == "M2_PRESSED"):
             mouse.click('right')
         mouse.move(mouseX, mouseY, absolute=False, duration=duration)
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
