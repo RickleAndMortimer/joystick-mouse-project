@@ -31,10 +31,10 @@ while True:
         #if statements time
         if (mouse1_clicked == "M1_PRESSED"):
             mouse.press('left')
-
         elif (mouse2_clicked == "M2_PRESSED"):
             mouse.click('right')
         else:
             mouse.release('left')
+            print("Released")
         mouse.move(mouseX, mouseY, absolute=False, duration=duration)
 print("Device disconnected ")
