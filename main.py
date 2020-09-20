@@ -20,13 +20,21 @@ while True:
     #String format: mouseX, mouseY, mouse1_clicked, mouse2_clicked
     mouseX = (int(params[0].decode('utf-8'))-516) / sensitivity
     mouseY = ((int(params[1].decode('utf-8'))-516) / sensitivity) * -1
+    print(mouseX)
+    print(mouseY)
     mouse1_clicked = params[2].decode('utf-8')
     mouse2_clicked = params[3].decode('utf-8')
-    #if statements time
-    if (mouse1_clicked == "M1_PRESSED"):
-        mouse.click('left')
-    if (mouse2_clicked == "M2_PRESSED"):
-        mouse.click('right')
-    mouse.move(mouseX, mouseY, absolute=False, duration=duration)
+    print(mouse2_clicked)
+    if mouse.is_pressed():
+        mouse.drag(0, 0, mouseX, mouseY, absolute=False, duration=duration)
+    else:
+        #if statements time
+        if (mouse1_clicked == "M1_PRESSED"):
+            mouse.press('left')
 
+        elif (mouse2_clicked == "M2_PRESSED"):
+            mouse.click('right')
+        else:
+            mouse.release('left')
+        mouse.move(mouseX, mouseY, absolute=False, duration=duration)
 print("Device disconnected ")
