@@ -12,6 +12,7 @@ void setup() {
   pinMode(m2, OUTPUT);
   pinMode(mX, INPUT);
   pinMode(mY, INPUT);
+  Serial.setTimeout(10);
 }
 
 void loop() {
